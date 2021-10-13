@@ -15,7 +15,7 @@ const Perfil = () => {
   const history = useHistory();
 
   useEffect(() => {
-    setEmail(localStorageByKey('user'));
+    setEmail(localStorageByKey('user').email);
   }, []);
 
   const handleExit = () => {

@@ -1,7 +1,7 @@
 export const login = (data) => {
   localStorage.setItem('mealsToken', 1);
   localStorage.setItem('cocktailsToken', 1);
-  localStorage.setItem('user', JSON.stringify(data));
+  localStorage.setItem('user', JSON.stringify({ email: data }));
 };
 
 export const logout = () => {

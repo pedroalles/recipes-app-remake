@@ -12,13 +12,14 @@ import App from '../../App';
 
 const MEALSTOKEN = 'mealsToken';
 const COCKTAILS_TOKEN = 'cocktailsToken';
+const USER = 'user';
 
 const BUTTON_LOGOUT = 'profile-logout-btn';
 
 describe('testa a página Profile', () => {
-  beforeEach(() => {
-    renderWithRouter(<App />, { initialEntries: ['/profile'] });
-  });
+  // beforeEach(() => {
+  //   renderWithRouter(<App />, { initialEntries: ['/profile'] });
+  // });
 
   afterEach(() => {
     cleanup();
@@ -34,11 +35,17 @@ describe('testa a página Profile', () => {
   // });
 
   test('se o localStorage é limpo após sair', () => {
+    localStorage.setItem(USER, JSON.stringify({ email: 'a@a.a' }));
+
+    renderWithRouter(<App />, { initialEntries: ['/profile'] });
+
+    localStorage.removeItem(USER);
     localStorage.removeItem(MEALSTOKEN);
     localStorage.removeItem(COCKTAILS_TOKEN);
 
     click(getByTestId(BUTTON_LOGOUT));
 
+    expect(localStorage.getItem(USER)).toBe(null);
     expect(localStorage.getItem(MEALSTOKEN)).toBe(null);
     expect(localStorage.getItem(COCKTAILS_TOKEN)).toBe(null);
   });

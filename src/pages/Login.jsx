@@ -26,7 +26,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    login({ email: userData.email });
+    login(userData.email);
     history.push('/comidas');
   };
 
