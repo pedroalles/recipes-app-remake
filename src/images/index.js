@@ -4,3 +4,5 @@ export { default as returnIcon } from './returnIcon.svg';
 export { default as mealIcon } from './mealIcon.svg';
 export { default as drinkIcon } from './drinkIcon.svg';
 export { default as exploreIcon } from './exploreIcon.svg';
+export { default as likeIcon } from './whiteHeartIcon.svg';
+export { default as unlikeIcon } from './blackHeartIcon.svg';

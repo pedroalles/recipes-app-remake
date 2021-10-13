@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {
-  // Link,
+  Link,
   useHistory } from 'react-router-dom';
 import {
-  // profileIcon,
+  profileIcon,
   returnIcon } from '../images';
 
 import IconButton from './styles/IconButton';
@@ -12,7 +12,7 @@ import IconButton from './styles/IconButton';
 const style = {
   // display: 'flex',
   display: 'grid ',
-  gridTemplateColumns: '0.8fr 3fr 0.8fr',
+  gridTemplateColumns: '1fr 2fr 1fr',
   // justifyContent: 'center',
   alignItems: 'center',
   width: '100vw',
@@ -30,27 +30,26 @@ const pStyle = {
   justifySelf: 'center',
 };
 
-// const aStyle = {
-//   // backgroundColor: 'white',
-//   display: 'flex',
-//   justifySelf: 'center',
-// };
+const aStyle = {
+  // backgroundColor: 'white',
+  display: 'flex',
+  justifySelf: 'center',
+};
 
-const Header = ({ title }) => {
+const Header = () => {
   const history = useHistory();
 
   return (
     <div style={ style }>
-      {/* <Link to="/profile" style={aStyle}>
+      <Link to="/profile" style={ aStyle }>
         <IconButton
-          src={profileIcon}
+          src={ profileIcon }
           data-testid="profile-top-btn"
           type="button"
         />
-      </Link> */}
-      <div />
+      </Link>
       <span style={ pStyle } data-testid="page-title">
-        { title }
+        {/* { title } */}
       </span>
       <IconButton
         src={ returnIcon }
@@ -62,11 +61,11 @@ const Header = ({ title }) => {
   );
 };
 
-const { func } = PropTypes;
+// const { func } = PropTypes;
 
-Header.propTypes = {
-  title: func.isRequired,
+// Header.propTypes = {
+//   title: func.isRequired,
 
-};
+// };
 
 export default Header;

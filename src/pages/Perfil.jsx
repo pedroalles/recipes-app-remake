@@ -9,6 +9,12 @@ import Page from './styles/Page';
 import Main from './styles/Main';
 import { localStorageByKey, logout } from '../services/localStorageManager';
 
+const pStyle = {
+  fontWeight: '700',
+  fontSize: '1.4rem',
+  margin: '0',
+};
+
 const Perfil = () => {
   const [email, setEmail] = useState('');
 
@@ -28,8 +34,7 @@ const Perfil = () => {
       <Header />
 
       <Main>
-        Profile
-        <p data-testid="profile-email">{ email }</p>
+        <p data-testid="profile-email" style={ pStyle }>{ email }</p>
         <Link to="/receitas-feitas">
           <button type="button" data-testid="profile-done-btn">
             Receitas Feitas

@@ -19,7 +19,8 @@ const drinksReducer = (state = INITIAL_STATE, { type, payload }) => {
       ...state,
       categorizedRecipes: {
         ...state.categorizedRecipes,
-        [payload.category]: payload.recipes },
+        [payload.category]: payload.recipes,
+      },
     };
 
   case STORE_DRINK_CATEGORIES:

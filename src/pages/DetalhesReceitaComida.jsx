@@ -16,6 +16,7 @@ import Main from './styles/MainDetails';
 import Page from './styles/Page';
 
 import IngredientsContainer from '../components/styles/IngredientsContainer';
+import LikeButton from '../components/LikeButton';
 
 const imgStyle = {
   width: '100vw',
@@ -42,6 +43,7 @@ const DetalhesReceitaComida = () => {
           <div>
             <img src={ details[id].strMealThumb } alt="" style={ imgStyle } />
             {/* <h1>{details[id].strMeal}</h1> */ }
+            <LikeButton recipe={ details[id] } />
             <IngredientsContainer>
               { measureIngredientsList(details[id]) }
             </IngredientsContainer>
