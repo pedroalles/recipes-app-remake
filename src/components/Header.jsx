@@ -90,9 +90,12 @@ const Header = ({ toggleFilter }) => {
 
 const { func } = PropTypes;
 
-Header.propTypes = {
-  toggleFilter: func.isRequired,
+Header.defaultProps = {
+  toggleFilter: func,
+};
 
+Header.propTypes = {
+  toggleFilter: func,
 };
 
 export default Header;
