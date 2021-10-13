@@ -22,11 +22,8 @@ const ReceitasFavoritas = () => {
           <div>
             {favorites.map((el) => (
               <div key={ el.idMeal || el.idDrink } style={ cardStyle }>
-                <h1 data-testid={ `${el.idMeal ? 0 : 1}-horizontal-name` }>{el.strMeal || el.strDrink}</h1>
-                <LikeButton
-                  data-testid={ `${el.idMeal ? 0 : 1}-horizontal-favorite-btn` }
-                  recipe={ el }
-                />
+                <h1>{el.strMeal || el.strDrink}</h1>
+                <LikeButton recipe={ el } />
               </div>
             ))}
           </div>
