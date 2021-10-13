@@ -1,7 +1,10 @@
-const MEALS_TOKEN_KEY = 'mealsToken';
-const COCKTAILS_TOKEN_KEY = 'cocktailsToken';
-const USER_KEY = 'user';
-const FAVORITE_KEY = 'favoriteRecipes';
+import { updateFavorites } from '../redux/actions/userActions';
+import store from '../redux/store';
+
+export const MEALS_TOKEN_KEY = 'mealsToken';
+export const COCKTAILS_TOKEN_KEY = 'cocktailsToken';
+export const USER_KEY = 'user';
+export const FAVORITE_KEY = 'favoriteRecipes';
 
 export const login = (data) => {
   localStorage.setItem(MEALS_TOKEN_KEY, 1);
@@ -35,4 +38,5 @@ export const toggleFavorite = (data) => {
     updatedData = [...favorites, data];
   }
   localStorage.setItem('favoriteRecipes', JSON.stringify(updatedData));
+  store.dispatch(updateFavorites(updatedData));
 };

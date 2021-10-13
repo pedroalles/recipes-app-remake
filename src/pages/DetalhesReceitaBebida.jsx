@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import ReactLoading from 'react-loading';
 import Header from '../components/SecondaryHeader';
+import LikeButton from '../components/LikeButton';
 
 import {
   getDrinkRecipe,
@@ -42,6 +43,7 @@ const DetalhesReceitaBebida = () => {
           <div>
             <img src={ details[id].strDrinkThumb } alt="" style={ imgStyle } />
             {/* <h1>{details[id].strDrink}</h1> */ }
+            <LikeButton recipe={ details[id] } />
             <IngredientsContainer>
               { measureIngredientsList(details[id]) }
             </IngredientsContainer>
